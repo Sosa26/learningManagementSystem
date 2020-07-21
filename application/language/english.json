@@ -656,5 +656,10 @@
     "identificationno": "Identificationno",
     "id_number": "Id number",
     "cv": "Cv",
-    "qualification": "Qualification"
+    "qualification": "Qualification",
+    "add_moderator": "Add moderator",
+    "moderator": "Moderator",
+    "moderators": "Moderators",
+    "moderator_add": "Moderator add",
+    "moderator_add_form": "Moderator add form"
 }

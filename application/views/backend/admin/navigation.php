@@ -25,6 +25,13 @@
 				</a>
 			</li>
 
+			<li class="side-nav-item <?php if ($page_name == 'Moderator')echo 'active';?>">
+				<a href="<?php echo site_url('admin/Moderator'); ?>" class="side-nav-link">
+					<i class="dripicons-user"></i>
+					<span><?php echo get_phrase('Moderator'); ?></span>
+				</a>
+			</li>
+
 			<li class="side-nav-item <?php if ($page_name == 'categories' || $page_name == 'category_add' || $page_name == 'category_edit' ): ?> active <?php endif; ?>">
 				<a href="javascript: void(0);" class="side-nav-link <?php if ($page_name == 'categories' || $page_name == 'category_add' || $page_name == 'category_edit' ): ?> active <?php endif; ?>">
 					<i class="dripicons-network-1"></i>

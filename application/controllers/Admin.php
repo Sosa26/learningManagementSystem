@@ -153,6 +153,47 @@ class Admin extends CI_Controller {
     }
   }
 
+  public function moderator($param1 = "", $param2 = "") {
+    if ($this->session->userdata('admin_login') != true) {
+      redirect(site_url('login'), 'refresh');
+    }
+    if ($param1 == "add") {
+      $this->user_model->add_user();
+      redirect(site_url('admin/moderator'), 'refresh');
+    }
+    elseif ($param1 == "edit") {
+      $this->user_model->edit_user($param2);
+      redirect(site_url('admin/moderator'), 'refresh');
+    }
+    elseif ($param1 == "delete") {
+      $this->user_model->delete_user($param2);
+      redirect(site_url('admin/moderator'), 'refresh');
+    }
+
+    $page_data['page_name'] = 'moderator';
+    $page_data['page_title'] = get_phrase('moderator');
+    $page_data['users'] = $this->user_model->get_user($param2);
+    $this->load->view('backend/index', $page_data);
+  }
+
+  public function moderator_form($param1 = "", $param2 = "") {
+    if ($this->session->userdata('admin_login') != true) {
+      redirect(site_url('login'), 'refresh');
+    }
+
+    if ($param1 == 'add_moderator_form') {
+      $page_data['page_name'] = 'moderator_add';
+      $page_data['page_title'] = get_phrase('moderator_add');
+      $this->load->view('backend/index', $page_data);
+    }
+    elseif ($param1 == 'edit_moderator_form') {
+      $page_data['page_name'] = 'moderator_edit';
+      $page_data['user_id'] = $param2;
+      $page_data['page_title'] = get_phrase('moderator_edit');
+      $this->load->view('backend/index', $page_data);
+    }
+  }
+
   public function enrol_history($param1 = "") {
     if ($this->session->userdata('admin_login') != true) {
       redirect(site_url('login'), 'refresh');
