@@ -158,7 +158,7 @@ class Admin extends CI_Controller {
       redirect(site_url('login'), 'refresh');
     }
     if ($param1 == "add") {
-      $this->user_model->add_user();
+      $this->moderator_model->add_moderator();
       redirect(site_url('admin/moderator'), 'refresh');
     }
     elseif ($param1 == "edit") {
@@ -172,7 +172,7 @@ class Admin extends CI_Controller {
 
     $page_data['page_name'] = 'moderator';
     $page_data['page_title'] = get_phrase('moderator');
-    $page_data['users'] = $this->user_model->get_user($param2);
+    $page_data['moderator'] = $this->user_model->get_user($param2);
     $this->load->view('backend/index', $page_data);
   }
 

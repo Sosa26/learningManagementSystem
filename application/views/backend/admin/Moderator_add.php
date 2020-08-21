@@ -14,7 +14,8 @@
 
                 <h4 class="header-title mb-3"><?php echo get_phrase('moderator_add_form'); ?></h4>
 
-                <form class="required-form" action="<?php echo site_url('admin/users/add'); ?>" enctype="multipart/form-data" method="post">
+                <form class="required-form" action="<?php echo site_url();?>main/form_validation" enctype="multipart/form-data" method="post">
+                    
                     <div id="progressbarwizard">
                         <ul class="nav nav-pills nav-justified form-wizard-header mb-3">
                             <li class="nav-item">
@@ -61,12 +62,14 @@
                                             <label class="col-md-3 col-form-label" for="first_name"><?php echo get_phrase('first_name'); ?><span class="required">*</span></label>
                                             <div class="col-md-9">
                                                 <input type="text" class="form-control" id="first_name" name="first_name" required>
+                                                <span class="text-danger"><?php echo form_error("first_name");  ?></span>
                                             </div>
                                         </div>
                                         <div class="form-group row mb-3">
                                             <label class="col-md-3 col-form-label" for="last_name"><?php echo get_phrase('last_name'); ?><span class="required">*</span></label>
                                             <div class="col-md-9">
                                                 <input type="text" class="form-control" id="last_name" name="last_name" required>
+                                                <span class="text-danger"><?php echo form_error("last_name");  ?></span>
                                             </div>
                                         </div>
                                         <div class="form-group row mb-3">
@@ -97,12 +100,14 @@
                                             <label class="col-md-3 col-form-label" for="email"><?php echo get_phrase('email'); ?><span class="required">*</span></label>
                                             <div class="col-md-9">
                                                 <input type="email" id="email" name="email" class="form-control" required>
+                                                <span class="text-danger"><?php echo form_error("email");  ?></span>
                                             </div>
                                         </div>
                                         <div class="form-group row mb-3">
                                             <label class="col-md-3 col-form-label" for="password"><?php echo get_phrase('password'); ?><span class="required">*</span></label>
                                             <div class="col-md-9">
                                                 <input type="password" id="password" name="password" class="form-control" required>
+                                                <span class="text-danger"><?php echo form_error("password");  ?></span>
                                             </div>
                                         </div>
                                     </div> <!-- end col -->
