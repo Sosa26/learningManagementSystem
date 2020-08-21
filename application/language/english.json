@@ -657,9 +657,10 @@
     "id_number": "Id number",
     "cv": "Cv",
     "qualification": "Qualification",
-    "add_moderator": "Add moderator",
-    "moderator": "Moderator",
-    "moderators": "Moderators",
-    "moderator_add": "Moderator add",
-    "moderator_add_form": "Moderator add form"
+    "add_teacher": "Add teacher",
+    "teacher": "teacher",
+    "teachers": "teachers",
+    "teacher_add": "teacher add",
+    "teacher_add_form": "teacher add form",
+    "email_duplication": "Email duplication"
 }

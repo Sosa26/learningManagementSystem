@@ -9,6 +9,9 @@
 			<?php
 			$admin_details = $this->user_model->get_all_user($this->session->userdata('user_id'))->row_array();
 			?>
+			<?php
+			$admin_details = $this->teacher_model->get_all_user($this->session->userdata('user_id'))->row_array();
+			?>
 			<span class="leftbar-user-name"><?php echo $admin_details['first_name'].' '.$admin_details['last_name']; ?></span>
 		</a>
 	</div>
@@ -25,10 +28,10 @@
 				</a>
 			</li>
 
-			<li class="side-nav-item <?php if ($page_name == 'Moderator')echo 'active';?>">
-				<a href="<?php echo site_url('admin/Moderator'); ?>" class="side-nav-link">
+			<li class="side-nav-item <?php if ($page_name == 'teacher')echo 'active';?>">
+				<a href="<?php echo site_url('admin/teacher'); ?>" class="side-nav-link">
 					<i class="dripicons-user"></i>
-					<span><?php echo get_phrase('Moderator'); ?></span>
+					<span><?php echo get_phrase('teacher'); ?></span>
 				</a>
 			</li>
 

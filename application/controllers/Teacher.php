@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class User extends CI_Controller {
+class Teacher extends CI_Controller {
     public function __construct()
     {
         parent::__construct();
@@ -103,11 +103,11 @@ class User extends CI_Controller {
         }
 
         if ($param1 == 'paypal_settings') {
-            $this->user_model->update_instructor_paypal_settings($this->session->userdata('user_id'));
+            $this->teacher_model->update_instructor_paypal_settings($this->session->userdata('user_id'));
             redirect(site_url('user/payment_settings'), 'refresh');
         }
         if ($param1 == 'stripe_settings') {
-            $this->user_model->update_instructor_stripe_settings($this->session->userdata('user_id'));
+            $this->teacher_model->update_instructor_stripe_settings($this->session->userdata('user_id'));
             redirect(site_url('user/payment_settings'), 'refresh');
         }
 

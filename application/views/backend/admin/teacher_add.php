@@ -12,9 +12,9 @@
         <div class="card">
             <div class="card-body">
 
-                <h4 class="header-title mb-3"><?php echo get_phrase('moderator_add_form'); ?></h4>
+                <h4 class="header-title mb-3"><?php echo get_phrase('teacher_add_form'); ?></h4>
 
-                <form class="required-form" action="<?php echo site_url('admin/users/add'); ?>" enctype="multipart/form-data" method="post">
+                <form class="required-form" action="<?php echo site_url('admin/teachers/add'); ?>" enctype="multipart/form-data" method="post">
                     <div id="progressbarwizard">
                         <ul class="nav nav-pills nav-justified form-wizard-header mb-3">
                             <li class="nav-item">
