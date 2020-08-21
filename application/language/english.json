@@ -661,5 +661,6 @@
     "moderator": "Moderator",
     "moderators": "Moderators",
     "moderator_add": "Moderator add",
-    "moderator_add_form": "Moderator add form"
+    "moderator_add_form": "Moderator add form",
+    "email_duplication": "Email duplication"
 }

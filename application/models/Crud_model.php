@@ -124,7 +124,7 @@ class Crud_model extends CI_Model {
         }elseif ($revenue_type == 'instructor_revenue') {
             $this->db->where('user_id !=', $admin_details['id']);
             $this->db->select('id');
-            $courses = $this->db->get('course')->result_array();
+            $courses = $this->db->get('course')->result_array(); 
             foreach ($courses as $course) {
                 if (!in_array($course['id'], $course_ids)) {
                     array_push( $course_ids, $course['id'] );

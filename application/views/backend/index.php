@@ -2,6 +2,7 @@
     $system_name = $this->db->get_where('settings' , array('key'=>'system_name'))->row()->value;
     $system_title = $this->db->get_where('settings' , array('key'=>'system_title'))->row()->value;
     $user_details = $this->user_model->get_all_user($this->session->userdata('user_id'))->row_array();
+    // $moderator_details = $this->moderator_model->get_all_moderator($this->session->userdata('moderator_id'))->row_array();
     $text_align     = $this->db->get_where('settings', array('key' => 'text_align'))->row()->value;
     $logged_in_user_role = strtolower($this->session->userdata('role'));
 ?>

@@ -29,17 +29,17 @@
                   </thead>
                   <tbody>
                       <?php
-                       foreach ($users->result_array() as $key => $user): ?>
+                       foreach ($moderator->result_array() as $key => $moderator): ?>
                           <tr>
                               <td><?php echo $key+1; ?></td>
                               <td>
-                                  <img src="<?php echo $this->user_model->get_user_image_url($user['id']);?>" alt="" height="50" width="50" class="img-fluid rounded-circle img-thumbnail">
+                                  <img src="<?php echo $this->main_model->get_user_image_url($moderator['id']);?>" alt="" height="50" width="50" class="img-fluid rounded-circle img-thumbnail">
                               </td>
-                              <td><?php echo $user['first_name'].' '.$user['last_name']; ?></td>
-                              <td><?php echo $user['email']; ?></td>
+                              <td><?php echo $moderator['first_name'].' '.$moderator['last_name']; ?></td>
+                              <td><?php echo $moderator['email']; ?></td>
                               <td>
                                  <?php
-                                    $enrolled_courses = $this->crud_model->enrol_history_by_user_id($user['id']);?>
+                                    $enrolled_courses = $this->crud_model->enrol_history_by_user_id($moderator['id']);?>
                                     <ul>
                                         <?php foreach ($enrolled_courses->result_array() as $enrolled_course):
                                             $course_details = $this->crud_model->get_course_by_id($enrolled_course['course_id'])->row_array();?>
@@ -53,8 +53,8 @@
                                         <i class="mdi mdi-dots-vertical"></i>
                                     </button>
                                     <ul class="dropdown-menu">
-                                        <li><a class="dropdown-item" href="<?php echo site_url('admin/user_form/edit_user_form/'.$user['id']) ?>"><?php echo get_phrase('edit'); ?></a></li>
-                                        <li><a class="dropdown-item" href="#" onclick="confirm_modal('<?php echo site_url('admin/users/delete/'.$user['id']); ?>');"><?php echo get_phrase('delete'); ?></a></li>
+                                        <li><a class="dropdown-item" href="<?php echo site_url('admin/moderator_form/edit_moderator_form/'.$moderator['id']) ?>"><?php echo get_phrase('edit'); ?></a></li>
+                                        <li><a class="dropdown-item" href="#" onclick="confirm_modal('<?php echo site_url('admin/moderator/delete/'.$moderator['id']); ?>');"><?php echo get_phrase('delete'); ?></a></li>
                                     </ul>
                                 </div>
                               </td>
